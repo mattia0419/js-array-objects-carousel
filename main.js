@@ -26,6 +26,43 @@ const images = [
     },
   ];
 
-  const contenitore = document.getElementById("contenitore");
-
-  
+  const contenitore = document.getElementById("big-img");
+  const buttonNext = document.getElementById("button-next");
+  const buttonPrev = document.getElementById("button-prev");
+  let i = 0;
+buttonNext.addEventListener("click", function(){
+    nextSlide();
+})
+buttonPrev.addEventListener("click", function(){
+    prevSlide();
+})
+  function nextSlide(){
+        i++;
+        const imageActive = images[i];
+        contenitore.innerHTML = `<div id="big-img" class="central-img d-flex">
+        <img id="active-image" src="./${imageActive.image}" alt="">
+        
+        <div class="description">
+            <h2>${imageActive.title}</h2>
+            <p>${imageActive.text}</p>
+        </div>
+    </div>`
+    if(i == 4){
+        i = -1;
+    }
+    }
+    function prevSlide(){
+        i--;
+        const imageActive = images[i];
+        contenitore.innerHTML = `<div id="big-img" class="central-img d-flex">
+        <img id="active-image" src="./${imageActive.image}" alt="">
+        
+        <div class="description">
+            <h2>${imageActive.title}</h2>
+            <p>${imageActive.text}</p>
+        </div>
+    </div>`
+    if(i == 0){
+        i = 5;
+    }
+    }
