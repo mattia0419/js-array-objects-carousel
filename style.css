@@ -37,13 +37,15 @@
     position: absolute;
     z-index: 3;
     top: 25px;
-    left: 130px;
+    left: 50%;
+    transform: translate(-50%);
     color: white;
 }
 .button-down{
     position: absolute;
     z-index: 3;
     bottom: 25px;
-    left: 130px;
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
 }

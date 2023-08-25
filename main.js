@@ -38,6 +38,11 @@ buttonPrev.addEventListener("click", function(){
 })
   function nextSlide(){
         i++;
+        if(i >= images.length){
+        i = 0;
+        }
+        
+        
         const imageActive = images[i];
         contenitore.innerHTML = `<div id="big-img" class="central-img d-flex">
         <img id="active-image" src="./${imageActive.image}" alt="">
@@ -47,12 +52,15 @@ buttonPrev.addEventListener("click", function(){
             <p>${imageActive.text}</p>
         </div>
     </div>`
-    if(i == 4){
-        i = -1;
-    }
+    
     }
     function prevSlide(){
         i--;
+        if(i <= 0){
+        i = images.length - 1;
+        }
+        
+    
         const imageActive = images[i];
         contenitore.innerHTML = `<div id="big-img" class="central-img d-flex">
         <img id="active-image" src="./${imageActive.image}" alt="">
@@ -62,7 +70,5 @@ buttonPrev.addEventListener("click", function(){
             <p>${imageActive.text}</p>
         </div>
     </div>`
-    if(i == 0){
-        i = 5;
-    }
+    
     }
